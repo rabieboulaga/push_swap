@@ -6,7 +6,7 @@
 /*   By: rboulaga <rboulaga@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 19:20:54 by rboulaga          #+#    #+#             */
-/*   Updated: 2024/05/07 15:54:48 by rboulaga         ###   ########.fr       */
+/*   Updated: 2024/05/08 13:27:05 by rboulaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ void check_moves(stack **stack_a, stack **stack_b)
 	char *line;
 	int size;
 
+	if (!(*stack_a))
+		exit(0);
 	size = ft_lstsize(*stack_a);
 	check_double(stack_a);
 	line = get_next_line(0);
@@ -58,6 +60,7 @@ void check_moves(stack **stack_a, stack **stack_b)
 	if (size == ft_lstsize(*stack_a))
 		check_sort_stack_a(stack_a);
 	write (1 , "KO\n", 3);
+	just_free(stack_a, stack_b, 0);
 }
 
 int main(int	ac, char	**av)
@@ -109,4 +112,6 @@ void just_free(stack **stack_a,stack **stack_b, int order)
 		write (1, "Error\n", 6);
 		exit(1);
 	}
+	if (order == 0)
+		exit(0);
 }

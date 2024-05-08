@@ -6,7 +6,7 @@
 /*   By: rboulaga <rboulaga@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 19:39:43 by rboulaga          #+#    #+#             */
-/*   Updated: 2024/05/04 13:15:57 by rboulaga         ###   ########.fr       */
+/*   Updated: 2024/05/08 11:17:55 by rboulaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,12 @@ void basic_push(stack **stack_a, stack **stack_b)
 {
 	stack *tmp;
 	int size;
+	// int disorder;
 
+	// disorder = 0;
+	// disorder = hello (stack_a, disorder);
+	// printf("%d", disorder);
+	// exit(0);
 	size = ft_lstsize(*stack_a);
 	if (ft_lstsize(*stack_a) <= 5)
 		return;
@@ -40,7 +45,7 @@ void basic_push(stack **stack_a, stack **stack_b)
 		best_mouve(tmp, stack_a, stack_b);
 	}
 }
-			
+
 void best_mouve(stack *tmp, stack **stack_a, stack **stack_b)
 {
 	int i;
@@ -73,16 +78,40 @@ void best_mouve(stack *tmp, stack **stack_a, stack **stack_b)
 int	calculate_disorder(stack **stack_a)
 {
 	int disorder;
-
 	disorder = 0;
+
 	if (ft_lstsize(*stack_a) <= 130)
 		disorder = 13;
 	else if(ft_lstsize(*stack_a) <= 230 && ft_lstsize(*stack_a) > 130)
 		disorder = 21;
 	else if (ft_lstsize(*stack_a) > 230)
-		disorder = 33;
+		disorder = 51;
+	// if (disorder <= 33)
+	// 	disorder = 33;
 	return (disorder);
 }
+
+// int hello(stack **stack_a)
+// {
+// 	stack *tmp;
+// 	int disorder;
+
+// 	// disorder = 0;
+// 	tmp = (*stack_a);
+// 	// // while (tmp->next->next->next)
+// 	// {
+// 		// if (tmp->index > tmp->next->index)
+// 			disorder++;
+// 		tmp = tmp->next;
+// 		if (!tmp)
+// 			// break;
+// 		// tmp = tmp->next;
+// 	// }
+// 	printf("%d", disorder);
+// 	exit(0);
+// 	return(disorder);
+// }
+
 // int	calculate_disorder(stack **stack_a)
 // {
 // 	stack *tmp;

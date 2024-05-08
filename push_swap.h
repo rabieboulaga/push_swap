@@ -6,7 +6,7 @@
 /*   By: rboulaga <rboulaga@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 03:37:13 by rboulaga          #+#    #+#             */
-/*   Updated: 2024/05/07 15:44:57 by rboulaga         ###   ########.fr       */
+/*   Updated: 2024/05/08 11:02:54 by rboulaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int		ft_strcmp(char *s1,char *s2);
 void	apply_moves(stack **stack_a, stack **stack_b, char *line);
 void	just_free(stack **stack_a,stack **stack_b, int order);
 char	*get_next_line(int fd);
-
+int		hello(stack **stack_a);
 
 
 
