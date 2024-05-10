@@ -6,7 +6,7 @@
 /*   By: rboulaga <rboulaga@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 19:39:43 by rboulaga          #+#    #+#             */
-/*   Updated: 2024/05/08 11:17:55 by rboulaga         ###   ########.fr       */
+/*   Updated: 2024/05/10 10:26:07 by rboulaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,7 @@ void basic_push(stack **stack_a, stack **stack_b)
 {
 	stack *tmp;
 	int size;
-	// int disorder;
 
-	// disorder = 0;
-	// disorder = hello (stack_a, disorder);
-	// printf("%d", disorder);
-	// exit(0);
 	size = ft_lstsize(*stack_a);
 	if (ft_lstsize(*stack_a) <= 5)
 		return;
@@ -86,8 +81,6 @@ int	calculate_disorder(stack **stack_a)
 		disorder = 21;
 	else if (ft_lstsize(*stack_a) > 230)
 		disorder = 51;
-	// if (disorder <= 33)
-	// 	disorder = 33;
 	return (disorder);
 }
 

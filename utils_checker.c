@@ -6,11 +6,11 @@
 /*   By: rboulaga <rboulaga@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 17:56:51 by rboulaga          #+#    #+#             */
-/*   Updated: 2024/05/07 15:45:52 by rboulaga         ###   ########.fr       */
+/*   Updated: 2024/05/09 19:39:14 by rboulaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 void apply_moves(stack **stack_a, stack **stack_b, char *line)
 {
@@ -37,7 +37,7 @@ void apply_moves(stack **stack_a, stack **stack_b, char *line)
 	else if (ft_strcmp(line, "rrb\n"))
 		reverse_rotate(stack_b, 5);
 	else
-		just_free(stack_a, stack_b, 1);
+		just_free(stack_a, stack_b, 1, line);
 }
 
 

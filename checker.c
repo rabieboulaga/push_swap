@@ -6,11 +6,12 @@
 /*   By: rboulaga <rboulaga@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 19:20:54 by rboulaga          #+#    #+#             */
-/*   Updated: 2024/05/08 13:27:05 by rboulaga         ###   ########.fr       */
+/*   Updated: 2024/05/09 19:39:27 by rboulaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "push_swap_bonus.h"
 
 void check_sort_stack_a(stack **stack_a)
 {
@@ -60,7 +61,7 @@ void check_moves(stack **stack_a, stack **stack_b)
 	if (size == ft_lstsize(*stack_a))
 		check_sort_stack_a(stack_a);
 	write (1 , "KO\n", 3);
-	just_free(stack_a, stack_b, 0);
+	just_free(stack_a, stack_b, 0, line);
 }
 
 int main(int	ac, char	**av)
@@ -91,7 +92,7 @@ int main(int	ac, char	**av)
 	}
 	check_moves(&stack_a, &stack_b);
 }
-void just_free(stack **stack_a,stack **stack_b, int order)
+void just_free(stack **stack_a,stack **stack_b, int order, char *line)
 {
 	stack *tmp;
 
@@ -107,11 +108,16 @@ void just_free(stack **stack_a,stack **stack_b, int order)
 		free (*stack_b);
 		(*stack_b) = tmp;
 	}
+	free(line);
 	if (order == 1)
 	{
-		write (1, "Error\n", 6);
+		write (2, "Error\n", 6);
 		exit(1);
 	}
 	if (order == 0)
 		exit(0);
 }
+
+
+// leak when stack B has nodes
+// segv on pb & pa when stack is empty

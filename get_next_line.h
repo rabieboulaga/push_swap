@@ -6,7 +6,7 @@
 /*   By: rboulaga <rboulaga@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 18:01:17 by rboulaga          #+#    #+#             */
-/*   Updated: 2024/05/07 13:13:08 by rboulaga         ###   ########.fr       */
+/*   Updated: 2024/05/09 19:18:07 by rboulaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <string.h>
 # include <unistd.h>
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 10
+#  define BUFFER_SIZE 1
 
 # endif
 

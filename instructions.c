@@ -6,7 +6,7 @@
 /*   By: rboulaga <rboulaga@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 04:07:15 by rboulaga          #+#    #+#             */
-/*   Updated: 2024/05/07 09:52:29 by rboulaga         ###   ########.fr       */
+/*   Updated: 2024/05/09 10:02:31 by rboulaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 void	reverse_rotate(stack **list, int order)
 {
-	if (ft_lstsize(*list) < 2)
+	// if (!(*list))
+	// 	return;
+	if (!(*list) || ft_lstsize(*list) < 2 )
 		return ;
 	stack *beforelast_element;
 	stack *last_element;
@@ -32,7 +34,7 @@ void	reverse_rotate(stack **list, int order)
 
 void	rotate(stack **list, int order)
 {
-	if (ft_lstsize(*list) < 2)
+	if (!(*list) || ft_lstsize(*list) < 2)
 		return ;
 	stack *tmp;
 	stack *last_element;
@@ -50,8 +52,8 @@ void	rotate(stack **list, int order)
 void	push(stack **source, stack **destination, int order)
 {
 
-	// if(!(*source))
-	// 	return;
+	if(!(*source))
+		return;
 	stack *tmp;
 	tmp = *source;
 	*source = (*source)->next;
@@ -65,7 +67,7 @@ void	push(stack **source, stack **destination, int order)
 
 void	swap(stack **list, int order)
 {
-	if (ft_lstsize(*list) < 2)
+	if (!(*list) || ft_lstsize(*list) < 2)
 		return ;
 	stack *tmp;
 	stack *second;
